@@ -6,6 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Debug
-        run: docker-compose -v
+        run: docker-compose -v && curl -v
       - name: Building & running docker images
         run: ./dev-setup.sh
