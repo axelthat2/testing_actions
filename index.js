@@ -22,7 +22,11 @@ function createConnection() {
 }
 
 async function main() {
-  await createConnection()
+  try {
+    console.log(await createConnection())
+  } catch (e) {
+    console.log(e)
+  }
 }
 
-console.log(main())
+main()
