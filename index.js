@@ -16,7 +16,7 @@ function createConnection() {
         return
       }
 
-      resolve("connected as id " + connection.threadId)
+      resolve("connected as id " + con.threadId)
     })
   })
 }
