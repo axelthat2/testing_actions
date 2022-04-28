@@ -1,28 +1,28 @@
 const mysql = require("mysql")
 
-function sleep() {
-  return new Promise((resolve) => setTimeout(resolve, 4000))
+function createConnection() {
+  return new Promise((resolve, reject) => {
+    const con = mysql.createConnection({
+      host: "db",
+      port: 3306,
+      user: "root",
+      password: "root",
+      database: "database",
+    })
+
+    con.connect(function (err) {
+      if (err) {
+        reject("error connecting: " + err.stack)
+        return
+      }
+
+      resolve("connected as id " + connection.threadId)
+    })
+  })
 }
 
 async function main() {
-  const con = mysql.createConnection({
-    host: "db",
-    port: "3306",
-    user: "root",
-    password: "root",
-    database: "database",
-  })
-
-  con.connect(function (err) {
-    if (err) {
-      console.error("error connecting: " + err.stack)
-      return
-    }
-
-    console.log("connected as id " + connection.threadId)
-  })
-
-  await sleep()
+  await createConnection()
 }
 
-main()
+console.log(main())
