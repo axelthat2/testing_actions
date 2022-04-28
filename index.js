@@ -7,6 +7,7 @@ function sleep() {
 async function main() {
   const con = mysql.createConnection({
     host: "db",
+    port: "3306",
     user: "root",
     password: "root",
     database: "database",
