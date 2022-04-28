@@ -31,4 +31,5 @@ services:
     networks:
       - test-network
     depends_on:
-      - db
+      db:
+        condition: service_started
