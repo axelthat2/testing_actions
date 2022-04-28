@@ -8,3 +8,6 @@ docker-compose build
 
 # Run
 docker-compose up -d
+
+# Fill database
+docker exec scrapcars bash -c "node index.js"
