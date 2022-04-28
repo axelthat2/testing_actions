@@ -10,4 +10,4 @@ docker-compose build
 docker-compose up -d
 
 # Fill database
-docker exec app bash -c "node index.js"
+docker exec app sh -c "node index.js"
