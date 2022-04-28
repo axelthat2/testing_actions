@@ -6,7 +6,7 @@ function createConnection() {
       host: "db",
       port: 3306,
       user: "root",
-      password: "root",
+      password: "",
       database: "database",
     })
 
