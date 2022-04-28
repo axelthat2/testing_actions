@@ -1,0 +1,9 @@
+on: [push]
+
+jobs:
+  mysql:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Building & running docker images
+        run: ./dev-setup.sh
